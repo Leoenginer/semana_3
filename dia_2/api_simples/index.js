@@ -2,53 +2,25 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+const clientesController = require('./controllers/clientes');
+const animaisController = require('./controllers/animais');
+
 app.use(bodyParser.json());
 
 app.listen(3000, () => {
    console.log('Servidor rodando. Acesse em http://localhost:3000');
 });
-app.get('/clientes', (req, res) =>{
-    // let clientes = [
-    //     {
-    //         "id": "1",
-    //         "nome": "Bárbara",
-    //         "idade": "18",
-    //         "signo": "gêmeos",
-    //         "profissão": "professora",
-    //         "estado civil": "solteira"
-    //     },
-    //     {
-    //         "id": "2",
-    //         "nome": "Caique",
-    //         "idade": "22",
-    //         "signo": "gêmeos",
-    //         "profissão": "repórter",
-    //         "estado civil": "solteiro"
-    //     },
-    //     {
-    //         "id": "3",
-    //         "nome": "Enzo",
-    //         "idade": "14",
-    //         "signo": "dinossauro",
-    //         "profissão": "minecrafter profissional",
-    //         "estado civil": "casado virtualmente"
-    //     },
-    //     {
-    //         "id": "4",
-    //         "nome": "Gustavo",
-    //         "idade": "18",
-    //         "signo": "gêmeos",
-    //         "profissão": "professor",
-    //         "estado civil": "solteiro"
-    //     }
-    // ];
-    res.send('Ok');
-});
+app.get('/clientes', clientesController.listar);
+app.post('/clientes', clientesController.listar);
 
-app.post('/clientes', (req, res) => {
-    let clientes = req.body;
-    res.send(clientes);
-});
+app.get('/clientes', clientesController.criar);
+app.post('/clientes', clientesController.criar);
+
+app.get('/animais', animaisController.listar);
+app.post('/animais', animaisController.listar);
+
+app.get('/animais', animaisController.criar);
+app.post('/animais', animaisController.criar);
 
 
 
