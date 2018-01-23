@@ -1,0 +1,13 @@
+http://mastertech.com/api/clientes - GET
+--> Pede todos os clientes
+
+http://mastertech.com/api/clientes/cliente - POST
+--> Adiciona um cliente
+
+http://mastertech.com/api/clientes/cliente/1 - PUT
+--> Atualiza o cliente
+
+http://mastertech.com/api/clientes/cliente/1 - DELETE
+--> Remove um cliente
+
+
